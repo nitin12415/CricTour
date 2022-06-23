@@ -1,4 +1,4 @@
-import { environment } from "environments/environment";
+import { environment } from "environments/environment.prod";
 
 /* eslint-disable @typescript-eslint/naming-convention */
 export class Config {
