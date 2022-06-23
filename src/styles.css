@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+}
+
+.roboto-font {
+    font-family: 'Roboto';
+    font-style: normal;
+}
+
+.roboto-heading-font {
+    font-family: 'Roboto';
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('./assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+.robotoregular-font {
+    font-family: 'robotoregular';
+}
+
+.robotoregular-heading-font {
+    font-family: 'robotoregular';
+}
+
+@font-face {
+    font-family: 'robotobold';
+    src: url('./assets/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+}
+
+.robotobold-font {
+    font-family: 'robotobold';
+}
+
+.robotobold-heading-font {
+    font-family: 'robotobold';
+}
+
+.blue {
+    background-color: #043585 !important
+}
+
+.margin-top {
+    margin-top: 5%
+}
+
+.error-message {
+    color: red;
+}
+
+.warning {
+    font-size: 10pt
+}

@@ -1,0 +1,20 @@
+<table class="table">
+    <thead class="thead">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Country</th>
+        <th scope="col">Matches Played</th>
+        <th scope="col">Won</th>
+        <th scope="col">Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of table;">
+        <th scope="row">{{country?.id}}</th>
+        <td>{{country?.country_name}}</td>
+        <td>{{country?.matches_played}}</td>
+        <td>{{country?.matches_won}}</td>
+        <td>{{country?.matches_won * 2}}</td>
+      </tr>
+    </tbody>
+  </table>

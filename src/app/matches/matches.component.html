@@ -1,0 +1,149 @@
+<div class="container-fluid" style="padding: 3em;">
+    <div class="row" id="ads">
+        <div class="col-xs-6 col-md-2">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 full-width slider-block">
+                   <img class="side-img" src="../../assets/icon/1.jpeg">
+                   <h6 class="slider-font">THE 6IXTY, a new 60-ball tournament, was unveiled jointly by the Cricket West Indies and the Caribbean Premier League on Wednesday (June 22). The inaugural edition, set to be played between August 24 and 28 at Warner Park in St Kitts & Nevis, is expected to feature men's and women's teams compete to a new set of playing conditions.</h6>
+                </div>
+            </div>
+      </div>
+      <div class="col-xs-6 col-md-10">
+          <h3>Matches Played</h3>
+          <div class="row" id="ads">
+                <div class="col-xs-6 col-md-4" *ngFor="let match of matches">
+                    <mat-card align="center" (click)="showMatchResult(match)">
+                        <mat-card-title><u>Match {{match?.id}}</u></mat-card-title>
+                        <mat-card-subtitle>
+                            <p>{{match?.ground_name}}<br>
+                            <i>{{match?.match_date | date}}, {{match?.overs}} Ovr.</i></p>
+                        </mat-card-subtitle>	
+                        <mat-card-content>
+                            <div class="row" align="center">
+                                <div align="left" class="col-md-10">
+                                </div>
+                                <div class="col-md-6">
+                                    <b>{{match?.country1_name}}</b>
+                                </div>
+                                <div class="col-md-6">
+                                    {{match?.country1_runs}}/{{match?.country1_wickets}}
+                                </div>
+                                <div class="col-md-6">
+                                    <b>{{match?.country2_name}}</b>
+                                </div>
+                                <div class="col-md-6">
+                                    {{match?.country2_runs}}/{{match?.country2_wickets}}
+                                </div>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-footer align="center">
+                            <span>{{match?.match_winner}} won by {{match?.win_margin}} {{match?.type}}</span>
+                        </mat-card-footer>
+                    </mat-card>
+                </div>
+            </div>          
+        </div>
+    </div> 
+    <table *ngIf="matchDescription" class="table">
+        <thead class="thead table-header">
+            <tr>
+              <th scope="col">{{matchDescription?.country1_name}}
+                <span *ngIf="country1_toss_win">(won the toss and elected to {{matchDescription?.decision}} first)</span>
+              </th>
+              <th scope="col"></th>
+              <th scope="col">{{matchDescription?.country1_runs}}-{{matchDescription?.country1_wickets}} ({{matchDescription?.overs}} Ovrs.)</th>
+            </tr>
+        </thead>
+        <thead class="thead table-subheader">
+            <tr>
+              <th scope="col">Batsman</th>
+              <th scope="col">Runs</th>
+              <th scope="col">Balls</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let team1_batsman of country1_batsman;">
+                <th scope="row">{{team1_batsman?.name}}
+                    <span *ngIf="team1_batsman?.role_id == 1">(c)</span>
+                    <span *ngIf="team1_batsman?.role_id == 2">(wk)</span>
+                    <span *ngIf="team1_batsman?.role_id == 4">(c)(wk)</span>
+                </th>
+                <td>{{team1_batsman?.run_scored}}</td>
+                <td>{{team1_batsman?.balls_played}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Extras</th>
+                <td>{{country1_extras}}</td>
+            </tr>
+        </tbody>
+        <thead class="thead table-subheader">
+            <tr>
+              <th scope="col">Bowler</th>
+              <th scope="col">Overs</th>
+              <th scope="col">Wickets</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let team1_bowler of country1_bowler;">
+                <th scope="row">{{team1_bowler?.name}}
+                    <span *ngIf="team1_bowler?.role_id == 1">(c)</span>
+                    <span *ngIf="team1_bowler?.role_id == 2">(wk)</span>
+                    <span *ngIf="team1_bowler?.role_id == 4">(c)(wk)</span>
+                </th>
+                <td>{{team1_bowler?.overs}}</td>
+                <td>{{team1_bowler?.wicket_taken}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table *ngIf="matchDescription" class="table">
+        <thead class="thead table-header">
+            <tr>
+              <th scope="col">{{matchDescription?.country2_name}}
+                <span *ngIf="country2_toss_win">(won the toss and elected to {{matchDescription?.decision}} first)</span>
+              </th>
+              <th scope="col"></th>
+              <th scope="col">{{matchDescription?.country2_runs}}-{{matchDescription?.country2_wickets}} ({{matchDescription?.overs}} Ovrs.)</th>
+            </tr>
+        </thead>
+        <thead class="thead table-subheader">
+            <tr>
+              <th scope="col">Batsman</th>
+              <th scope="col">Runs</th>
+              <th scope="col">Balls</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let team2_batsman of country2_batsman;">
+                <th scope="row">{{team2_batsman?.name}}
+                    <span *ngIf="team2_batsman?.role_id == 1">(c)</span>
+                    <span *ngIf="team2_batsman?.role_id == 2">(wk)</span>
+                    <span *ngIf="team2_batsman?.role_id == 4">(c)(wk)</span>
+                </th>
+                <td>{{team2_batsman?.run_scored}}</td>
+                <td>{{team2_batsman?.balls_played}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Extras</th>
+                <td>{{country2_extras}}</td>
+            </tr>
+        </tbody>
+        <thead class="thead table-subheader">
+            <tr>
+              <th scope="col">Bowler</th>
+              <th scope="col">Overs</th>
+              <th scope="col">Wickets</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let team2_bowler of country2_bowler;">
+                <th scope="row">{{team2_bowler?.name}}
+                    <span *ngIf="team2_bowler?.role_id == 1">(c)</span>
+                    <span *ngIf="team2_bowler?.role_id == 2">(wk)</span>
+                    <span *ngIf="team2_bowler?.role_id == 4">(c)(wk)</span>
+                </th>
+                <td>{{team2_bowler?.overs}}</td>
+                <td>{{team2_bowler?.wicket_taken}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,27 @@
+<div class="row venue-banner">
+    <div class="col-md-12">
+        <h1>VENUE</h1>
+        <p>Last updated on 16 June 2022</p>
+    </div>
+    <div class="col-md-12" align="right">
+        <p><u>{{venueLength || 0}} items</u></p>
+    </div>
+</div>
+<table class="table">
+    <thead class="thead">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Ground Name</th>
+        <th scope="col">Country</th>
+        <th scope="col">Date Added</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let venue of venues;">
+        <th scope="row">{{venue?.id}}</th>
+        <td>{{venue?.ground_name}}</td>
+        <td>{{venue?.country_name}}</td>
+        <td>{{venue?.date_added | date}}</td>
+      </tr>
+    </tbody>
+  </table>

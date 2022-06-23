@@ -1,0 +1,57 @@
+#sect1 {  
+    width: auto;  
+    overflow: hidden;
+}   
+.banner{
+    width: 100%;
+    max-height: 30em;
+}
+.ads{
+    margin: 2.5em;
+}
+.side-img{
+    // height: 10%;
+    width: 100%;
+}
+.slide{
+    max-height: 50em;
+    max-width: 25em;
+}
+.slider-font{
+    text-align: justify;
+    color: #f3f3f3;
+}
+mat-card{
+    padding: 2em;
+    margin: 1em;
+    background-color: #f3f3f3;
+}
+mat-card:hover{
+    padding: 2em;
+    margin: 1em;
+    color: rgb(71, 71, 71);
+    background-color: #dadada;
+    font-weight: bold;
+}
+mat-card:active{
+    background-color: #707070;
+}
+.container-fluid{
+    background-image: url("../../assets/icon/cricket-background.jpg");
+}
+h3{
+    color: #c2c2c2;
+}
+.table{
+    background-color: #f3f3f3;
+}
+.table-header{
+    background-color: #707070;
+    color: white;
+}
+.table-subheader{
+    background-color: #c2c2c2;
+}
+i{
+    font-size: small;
+}
